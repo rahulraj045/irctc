@@ -1,0 +1,56 @@
+.auth-box {
+    background-color: white;
+    width: 390px;
+    margin-top: 80px;
+    border-radius: 18px;
+    padding-bottom: 18px;
+
+    .box-nav-bar {
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .nav-bar-title {
+          margin-top: 20px;
+      }
+    }
+
+    .form-container {
+        z-index: 1;
+
+        .sign-in {
+            margin-top: 10px;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+                background-color: #ffffff;
+
+                .avatar {
+                    width: 40%;
+                    border-radius: 50%;
+                }
+            }
+            
+            h2 {
+              font-size:large;
+              color: #082b71;
+              text-align: center;
+              margin: 10px 0;
+            }
+          
+            .buttons-container {
+              padding-bottom:30px;
+              padding-right: 35px;
+              display: flex;
+              justify-content: flex-end;
+            }
+          }
+        
+    }
+}

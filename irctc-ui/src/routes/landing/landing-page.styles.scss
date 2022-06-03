@@ -1,0 +1,12 @@
+.landing-page-container {
+    .auth-page {
+        display: flex;
+        flex-direction: column;
+        width: 900px;
+        margin: 0px auto;
+        align-items: center;
+    }
+    background-image: url('../../assets/projectbg.jpg');
+    background-size: cover;
+    margin-top: 0px;
+}

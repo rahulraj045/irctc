@@ -1,0 +1,84 @@
+.custom-button {
+  
+  font-family: "Source Code Pro", sans-serif;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: #1ba94c;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 12px #1ba94c;
+  border-radius: 2px;
+
+  &:hover {
+    box-shadow: 0 1px 6px #1ba94c;
+  }
+
+  &.google-sign-in {
+    box-shadow: 0 4px 12px #357ae8;
+    background-color: #4285f4;
+    color: white;
+
+    &:hover {
+      box-shadow: 0 1px 6px #357ae8;
+      background-color: #357ae8;
+      border: none;
+    }
+  }
+
+  &.price-cart {
+    margin-bottom: 10px;
+  }
+
+  &.features {
+    position: relative;
+    top: 6px;
+    right: 8px;
+    height: 25px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
+
+    .feature-text {
+      position: relative;
+      bottom: 12px;
+    }
+  }
+
+  &.contact {
+    padding: 0px;
+    position: relative;
+    top: 6px;
+    right: 35px;
+    height: 30px;
+    width: 120px;
+    font-size: 11px;
+    background-color: #68C5F3;
+    box-shadow: none;
+
+    .feature-text {
+      font-size: 13px;
+      text-align: center;
+      width: 150px;
+      height: 50px;
+      position: relative;
+      bottom: -11px;
+      line-height: 10px;
+    }
+  }
+
+  &.dashboard {
+    margin-left: -50px;
+    width: 240px;
+    box-shadow: none;
+    border-radius: 5px;
+  }
+}
