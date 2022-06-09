@@ -1,0 +1,27 @@
+[
+    {
+    "email": "shashank@gmail.com",
+    "password": "incorrect",
+    "user_data": {
+        "numberOfTickets": "2",
+        "ticketDetails": [
+            {
+                "name": "Shashank B",
+                "trainNumber": "367865",
+                "seatNumber": "1A-9",
+                "passengerID": "5684",
+                "boardingStation": "Majestic",
+                "destinationStation": "Mumbai"
+            },
+            {
+                "name": "Ishaan V K",
+                "trainNumber": "358470",
+                "seatNumber": "1A-10",
+                "passengerID": "6584",
+                "boardingStation": "Majestic",
+                "destinationStation": "Delhi"
+            }
+        ]
+    }
+    }
+]

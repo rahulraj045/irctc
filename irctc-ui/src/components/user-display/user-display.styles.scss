@@ -1,0 +1,40 @@
+.userdisplay-container {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    background-color: white;
+    border-radius: 18px;
+    color: #082b71;
+
+    .ticket-data-display {
+        position: relative;
+        left: 90px;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: 300px 300px;
+        column-gap: 100px;
+        background-color: #f3f7f7;
+        border-radius: 8px;
+        width: 715px;
+        border-bottom-style: groove;
+        border-bottom-width: 6px;
+        color: black;
+
+
+        p {
+            margin-left: 15px;
+            margin-top: 8px;
+        }
+    }
+
+    .validate-button-container {
+        position: relative;
+        top: 10px;
+        left: 675px;
+        height: auto;
+        width: 200px;
+        margin-bottom: 25px;
+    }
+}
