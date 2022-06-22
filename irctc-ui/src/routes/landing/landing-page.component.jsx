@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './landing-page.styles.scss';
 
 import axios from 'axios';
 
 import SignIn from '../../components/sign-in/sign-in.component';
 import UserDisplay from '../../components/user-display/user-display.component';
+import TcDisplay from '../../components/tc-display/tc-display.component';
 
 const defaultFormFields = {
     email: '',
@@ -14,7 +15,7 @@ const defaultFormFields = {
 const LandingPage = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const [userData, setUserData] = useState({})
-    const [displayData, setDisplayData] = useState(false)
+    const [displayData, setDisplayData] = useState('')
     const {email, password} = formFields;
 
 
@@ -33,12 +34,41 @@ const LandingPage = () => {
             "password": password 
         }
         )
-        .then(response => {setUserData(response.data); console.log(response.data)})
+        .then(response => {setUserData(response.data);setDisplayData(userData.type); console.log(response.data)})
         .catch(error => console.log(error))
         
+        localStorage.setItem("email", email);
+
         resetFormFields();
-        setDisplayData(true)
+        
+                
     };
+
+    useEffect(() => {
+        if (userData.type === 'passenger'){
+            setDisplayData('passenger') 
+        }else if (userData.type === 'tc'){
+            setDisplayData('tc')
+        }
+        // console.log(userData)
+    }, [userData])
+
+    const handleExit = () => {
+        localStorage.removeItem("email");
+        setDisplayData('');
+    }
+    
+    const showDisplayType = (displayData) => {
+        switch(displayData){
+            case 'passenger':
+                return <UserDisplay userData={userData} setUserData={setUserData} handleExit={handleExit}/>
+            case 'tc':
+                return <TcDisplay userData={userData} handleExit={handleExit}/>
+            default:
+                return <SignIn handleSubmit={handleSubmit} handleChange={handleChange} formFields={formFields} />
+        }
+    }
+    
 
     
     const handleChange = event => {
@@ -49,10 +79,8 @@ const LandingPage = () => {
     return (
         <div className='landing-page-container' style={{height:"100vh"}}>
             <div className='auth-page'>
-            {   displayData ?
-                <UserDisplay userData={userData} setDisplayData={setDisplayData}/>
-                :
-                <SignIn handleSubmit={handleSubmit} handleChange={handleChange} formFields={formFields} />
+            {  
+                showDisplayType(displayData)
             }   
             </div>
         </div>

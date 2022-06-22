@@ -3,6 +3,7 @@ from .db import db
 class User(db.Document):
     email = db.EmailField(required=False, unique=True)
     password = db.StringField(required=False, min_length=6)
+    type = db.StringField(required=False)
     user_data = db.DictField(required=False)
 
 
